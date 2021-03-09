@@ -2,13 +2,13 @@
 	pageEncoding="UTF-8"%>
 <%@ page session="true"
 	import="java.util.*, es.laarboleda.tiendaLibros.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Pedido a la librería MVC</title>
+<title>Pedido a la libreria MVC</title>
 </head>
-
 <body>
 	<h2>Libreria MVC</h2>
 	<hr />
@@ -35,7 +35,7 @@
 	<br />
 	<%
 	// Scriptlet 2: Chequea si la cesta está vacía.
-	List<ElementoPedido> cesta = (List<ElementoPedido>) session.getAttribute("carrito");
+	ArrayList<ElementoPedido> cesta = (ArrayList<ElementoPedido>) session.getAttribute("carrito");
 	if (cesta != null && cesta.size() > 0) {
 	%>
 	<p>
@@ -66,7 +66,7 @@
 			</form>
 		</tr>
 		<%
-		}
+		} //Cierre del for que recorre el carrito
 		%>
 	</table>
 	<br />
@@ -75,9 +75,7 @@
 			type="submit" value="Checkout">
 	</form>
 	<%
-	}
+	} //Cierre del if cuando hay algo en el carrito/cesta
 	%>
-
-
 </body>
 </html>
